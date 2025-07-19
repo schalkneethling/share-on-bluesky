@@ -1,0 +1,22 @@
+{
+  "name": "share-on-bluesky",
+  "version": "1.0.0",
+  "description": "A browser extension to share the current page on BlueSky",
+  "main": "background.js",
+  "scripts": {
+    "package-chrome": "node scripts/package-chrome.js",
+    "package-firefox": "node scripts/package-firefox.js",
+    "package-all": "npm run package-chrome && npm run package-firefox"
+  },
+  "devDependencies": {
+    "archiver": "^6.0.1"
+  },
+  "keywords": [
+    "browser-extension",
+    "bluesky",
+    "share",
+    "social-media"
+  ],
+  "author": "Schalk Neethling",
+  "license": "MIT"
+}

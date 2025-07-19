@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page for Share on Bluesky Extension</title>
+    
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="Amazing Test Article: A simple REST based service for country data | © 2025 GitHub, Inc.">
+    <meta property="og:description" content="A simple REST based service for country data. This is a test page to verify that the Share on Bluesky browser extension correctly extracts Open Graph meta tags and formats the content properly for sharing on Bluesky. Contribute to schalkneethling/country-hub development by creating an account on GitHub. © 2025 GitHub, Inc.">
+    <meta property="og:url" content="https://example.com/test-page">
+    <meta property="og:type" content="article">
+    
+    <!-- Fallback meta tags -->
+    <meta name="description" content="Fallback description for testing the Share on Bluesky extension functionality.">
+    
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-section {
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .highlight {
+            background: #e3f2fd;
+            padding: 10px;
+            border-left: 4px solid #2196f3;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Page for Share on Bluesky Extension</h1>
+    
+    <div class="test-section">
+        <h2>Extension Test Instructions</h2>
+        <ol>
+            <li>Install the Share on Bluesky extension in your browser</li>
+            <li>Click the butterfly icon in your browser toolbar</li>
+            <li>A new tab should open with Bluesky's compose interface</li>
+            <li>The post should be pre-filled with content from this page</li>
+        </ol>
+    </div>
+    
+    <div class="test-section">
+        <h2>Expected Content</h2>
+        <p>The extension should extract:</p>
+        <ul>
+            <li><strong>Title:</strong> "Amazing Test Article: A simple REST based service for country data" (from og:title, with GitHub copyright removed)</li>
+            <li><strong>Description:</strong> "A simple REST based service for country data. This is a test page to verify that the Share on Bluesky browser extension correctly extracts Open Graph meta tags and formats the content properly for sharing on Bluesky." (from og:description, with GitHub copyright and contribute messages removed)</li>
+            <li><strong>Final Post:</strong> Duplicated "A simple REST based service for country data" will be removed automatically</li>
+            <li><strong>URL:</strong> Current page URL with UTM parameters removed</li>
+        </ul>
+    </div>
+    
+    <div class="highlight">
+        <strong>Note:</strong> The extension should format the content as:<br>
+        <code>Title | Description | URL</code><br>
+        And respect Bluesky's 300 character limit.
+    </div>
+    
+    <div class="test-section">
+        <h2>Test with UTM Parameters</h2>
+        <p>Try adding UTM parameters to the URL to test UTM removal:</p>
+        <a href="?utm_source=test&utm_medium=web&utm_campaign=extension&utm_content=button&utm_term=bluesky">
+            Add UTM Parameters
+        </a>
+    </div>
+    
+    <div class="test-section">
+        <h2>GitHub Copyright Removal Test</h2>
+        <p>This page includes GitHub-style copyright notices in the meta tags to test the extension's content cleaning functionality:</p>
+        <div class="highlight">
+            <strong>Original content:</strong><br>
+            <code>Title: "Amazing Test Article: A simple REST based service for country data | © 2025 GitHub, Inc."</code><br>
+            <code>Description: "A simple REST based service for country data. ... Contribute to schalkneethling/country-hub development by creating an account on GitHub. © 2025 GitHub, Inc."</code><br><br>
+            <strong>After cleaning:</strong><br>
+            <code>Title: "Amazing Test Article: A simple REST based service for country data"</code><br>
+            <code>Description: "..." (without copyright and contribute messages)</code>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Duplicate Text Removal Test</h2>
+        <p>The extension automatically removes duplicated text from the final post:</p>
+        <div class="highlight">
+            <strong>Before duplicate removal:</strong><br>
+            <code>Amazing Test Article: A simple REST based service for country data | A simple REST based service for country data. This is a test page... | URL</code><br><br>
+            <strong>After duplicate removal:</strong><br>
+            <code>Amazing Test Article: A simple REST based service for country data | This is a test page... | URL</code><br><br>
+            <em>The duplicated "A simple REST based service for country data" is automatically removed.</em>
+        </div>
+    </div>
+    
+    <p>This page includes proper Open Graph meta tags to test the extension's content extraction capabilities. The extension should prioritize og:title and og:description over the regular title and meta description tags.</p>
+</body>
+</html> 
